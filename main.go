@@ -53,6 +53,9 @@ func main() {
 		w.Write(file)
 	})
 
+	// sitemap
+	r.Get("/sitemap.xml", routes.Sitemap)
+
 	// routes
 	r.NotFound(routes.NotFound)
 	// r.Get("/error", routes.Error)

@@ -8,4 +8,5 @@ type Card1 struct {
 	Route       string
 	External    bool
 	Annotation  string
+	Disabled    bool
 }

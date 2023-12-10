@@ -1,4 +1,5 @@
-<a href="{{.Route}}" {{if .External}} target="_blank" rel="noopener noreferrer" {{end}}>
+<a {{if ne .Disabled true}} href="{{.Route}}" {{end}} {{if .External}} target="_blank" rel="noopener noreferrer"
+    {{end}}>
     <div
         class="group border-4 border-transparent md:hover:border-primary overflow-hidden rounded-2xl transition-all h-full">
         <div class="card bg-base-300 rounded-none flex flex-col justify-between h-full">

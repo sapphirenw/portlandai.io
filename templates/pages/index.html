@@ -62,9 +62,9 @@
 {{define "content"}}
 
 <div class="space-y-16">
-    <div class="bg-earth h-[100vh] max-h-[1500px]">
-        <div id="particles-js" class="z-0 absolute top-0 h-[100vh] max-h-[1500px] w-screen"></div>
-        <div class="z-50 absolute top-0 h-[100vh] max-h-[1500px] w-screen">
+    <div class="bg-earth h-[95vh] max-h-[1500px]">
+        <div id="particles-js" class="z-0 absolute top-0 h-[95vh] max-h-[1500px] w-screen"></div>
+        <div class="z-50 absolute top-0 h-[95vh] max-h-[1500px] w-screen">
             <div class="flex flex-col justify-between h-full">
                 <div class="grid place-items-center gap-4 pt-[100px]">
                     <h1 class="text-center tracking-wide text-4xl md:text-7xl">
@@ -90,10 +90,10 @@
     <div class="safe-area px-4 py-16 space-y-16">
         <div class="grid md:grid-cols-2 gap-4 place-items-center">
             <div class="space-y-8">
-                <h3 class="text-3xl md:text-5xl font-semibold">AI Tools Are...<br> <span
+                <h3 data-aos="fade-up" class="text-3xl md:text-5xl font-semibold">AI Tools Are...<br> <span
                         class="text-primary text-5xl md:text-7xl underline">Complicated</span>
                 </h3>
-                <p class="text-lg">
+                <p data-aos="fade-up" data-aos-delay="200" class="text-lg">
                     Tools like <a class="link link-primary" href="https://chat.openai.com" target="_blank"
                         rel="noopener noreferrer">ChatGPT</a> and <a class="link link-primary"
                         href="https://zapier.com/apps/ai/integrations" target="_blank"
@@ -104,18 +104,20 @@
                 </p>
             </div>
             <div class="">
-                <img src="/public/svg/work-stress.svg" />
+                <img data-aos="fade-left" src="/public/svg/work-stress.svg" />
             </div>
         </div>
         <div class="space-y-8">
-            <div class="grid place-items-center text-center">
+            <div data-aos="fade-up" class="grid place-items-center text-center">
                 <h2 class="text-5xl md:text-6xl max-w-3xl font-semibold">Our Team is Your<br> <span
                         class="text-primary">AI
                         Expert</span></h2>
             </div>
             <div class="grid lg:grid-cols-3 gap-4">
                 {{range .Offerings}}
-                {{template "card1.html" .}}
+                <div data-aos="fade-up" data-aos-delay="100">
+                    {{template "card1.html" .}}
+                </div>
                 {{end}}
             </div>
         </div>
@@ -123,8 +125,8 @@
     <div class="bg-black">
         <div class="safe-area px-4 py-16 space-y-16">
             <div class="space-y-4">
-                <h2 class="text-5xl md:text-7xl text-white font-bold">Why Us?</h2>
-                <p class="text-lg max-w-2xl">
+                <h2 data-aos="fade-right" class="text-5xl md:text-7xl text-white font-bold">Why Us?</h2>
+                <p data-aos="fade-right" data-aos-delay="100" class="text-lg max-w-2xl">
                     The developers at Portland AI have been involved in the AI industry before mainstream
                     adoption. We use our fundamental understanding of tools like ChatGPT
                     and DALL•E to integrate seamlessly with your existing business practices.
@@ -132,13 +134,13 @@
             </div>
             <div class="grid md:grid-cols-2 gap-4 place-items-center">
                 <div class="space-y-4">
-                    <div class="text-center md:text-left">
+                    <div data-aos="fade-up" class="text-center md:text-left">
                         <p class="text-2xl text-gray-500">Our Philosophy</p>
                         <h2 class="text-4xl md:text-5xl font-semibold"><span
                                 class="text-primary underline">Collaborators.</span>
                             Not Clients</h2>
                     </div>
-                    <p class="text-lg">
+                    <p data-aos="fade-up" data-aos-delay="100" class="text-lg">
                         We are not interested in clients, but rather see our services more as a collaboration between
                         individuals sharing knowledge and expertise. We will not recommend AI to businesses who do not
                         need
@@ -155,18 +157,18 @@
                     </p>
                 </div>
                 <div class="">
-                    <img src="/public/svg/consult.svg" />
+                    <img data-aos="fade-left" data-aos-delay="100" src="/public/svg/consult.svg" />
                 </div>
             </div>
             <div class="grid md:grid-cols-2 gap-4 place-items-center">
                 <div class="space-y-4">
-                    <div class="text-center md:text-left">
+                    <div data-aos="fade-up" class="text-center md:text-left">
                         <p class="text-2xl text-gray-500">Useful AI</p>
                         <h2 class="text-4xl md:text-5xl font-semibold">Only When<br> <span
                                 class="text-primary underline">AI Makes
                                 Sense</span></h2>
                     </div>
-                    <p class="text-lg">
+                    <p data-aos="fade-up" data-aos-delay="100" class="text-lg">
                         We do not market AI tools and solutions as a silver bullet that can solve any of your problems.
                         We are realistic in our observation of the space, and openly critique tools / technologies /
                         companies in all aspects where they fall short. But we are also quick to highlight the specific
@@ -174,11 +176,11 @@
                     </p>
                 </div>
                 <div class="">
-                    <img src="/public/svg/puzzle.svg" />
+                    <img data-aos="fade-left" data-aos-delay="100" src="/public/svg/puzzle.svg" />
                 </div>
             </div>
             <div class="grid place-items-center">
-                <div class="max-w-4xl bg-base-300 rounded-xl p-4 space-y-4">
+                <div data-aos="fade-up" class="max-w-4xl bg-base-300 rounded-xl p-4 space-y-4">
                     <div class="flex space-x-1 text-amber-500">
                         <template x-for="i in Array.from({ length: 5 }, (_, i) => i)">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -203,13 +205,15 @@
                 </div>
             </div>
             <div class="space-y-8 pt-16 md:pt-32">
-                <div class="text-center grid place-items-center">
+                <div data-aos="fade-up" class="text-center grid place-items-center">
                     <p class="text-2xl text-gray-500">Showcase</p>
                     <h2 class="text-4xl md:text-5xl font-semibold">Our Portfolio</h2>
                 </div>
                 <div class="grid lg:grid-cols-2 gap-8">
                     {{range .Portfolio}}
-                    {{template "card1.html" .}}
+                    <div data-aos="fade-up" class="">
+                        {{template "card1.html" .}}
+                    </div>
                     {{end}}
                 </div>
             </div>
@@ -224,8 +228,8 @@
 
         <div class="mt-32 mx-4">
             <div id="contact" hx-ext="response-targets" class="mx-auto max-w-2xl space-y-2">
-                <h2 class="grid place-items-center text-2xl font-medium">Let's Chat</h2>
-                <div class="bg-base-100 rounded-xl p-2">
+                <h2 data-aos="fade-up" class="grid place-items-center text-2xl font-medium">Let's Chat</h2>
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-base-100 rounded-xl p-2">
                     <form hx-post="/events/send-support-form" hx-on="htmx:afterRequest: clearForm(event, this)"
                         hx-target="#server-status" hx-target-400="#server-status" hx-target-500="#server-status"
                         hx-swap="innerHTML" hx-indicator="#spinner" class="space-y-2">

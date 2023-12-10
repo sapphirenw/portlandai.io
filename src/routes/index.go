@@ -20,6 +20,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 			Src:         "/public/images/ai-tools.jpg",
 			Alt:         "AI Tools",
 			Route:       "/ai-tools",
+			Disabled:    true,
 		},
 		{
 			Title:       "Custom Integrations",
@@ -27,6 +28,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 			Src:         "/public/images/custom-software.jpg",
 			Alt:         "Custom Software",
 			Route:       "/custom-software",
+			Disabled:    true,
 		},
 		{
 			Title:       "Consultations",
@@ -34,6 +36,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 			Src:         "/public/images/software-consultant.jpeg",
 			Alt:         "Software Consultants",
 			Route:       "/contact",
+			Disabled:    true,
 		},
 	}
 	obj["Portfolio"] = []*components.Card1{

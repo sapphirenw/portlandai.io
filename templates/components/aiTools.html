@@ -1,7 +1,9 @@
 <div class="relative">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {{range .}}
-        {{template "technology1.html" .}}
+        <div data-aos="fade-up" class="">
+            {{template "technology1.html" .}}
+        </div>
         {{end}}
     </div>
     <div class="absolute bottom-0 grid place-items-center w-full bg-gradient-to-t from-black">
