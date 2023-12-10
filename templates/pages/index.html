@@ -62,30 +62,24 @@
 {{define "content"}}
 
 <div class="space-y-16">
-    <div class="bg-earth h-[95vh] max-h-[1500px]">
-        <div id="particles-js" class="z-0 absolute top-0 h-[95vh] max-h-[1500px] w-screen"></div>
-        <div class="z-50 absolute top-0 h-[95vh] max-h-[1500px] w-screen">
-            <div class="flex flex-col justify-between h-full">
-                <div class="grid place-items-center gap-4 pt-[100px]">
-                    <h1 class="text-center tracking-wide text-4xl md:text-7xl">
-                        Bridging the Gap<br> Between <span class="text-earth-text font-bold">AI</span> and <span
-                            class="text-earth-text font-bold">Your<br>
-                            Business</span>
-                    </h1>
-                    <a href="#contact" class="btn btn-lg btn-primary">
-                        Learn More
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M15.0378 6.34317L13.6269 7.76069L16.8972 11.0157L3.29211 11.0293L3.29413 13.0293L16.8619 13.0157L13.6467 16.2459L15.0643 17.6568L20.7079 11.9868L15.0378 6.34317Z"
-                                fill="currentColor" />
-                        </svg>
-                    </a>
-                </div>
-                <div class="w-full grid place-items-center">
-                    <img src="/public/svg/earth.svg" />
-                </div>
-            </div>
+    <div class="bg-earth flex flex-col justify-between h-[95vh]">
+        <div class="grid place-items-center gap-4 pt-[100px] ">
+            <h1 class="text-center tracking-wide text-4xl md:text-7xl">
+                Bridging the Gap<br> Between <span class="text-earth-text font-bold">AI</span> and <span
+                    class="text-earth-text font-bold">Your<br>
+                    Business</span>
+            </h1>
+            <a href="#contact" class="btn btn-lg btn-primary">
+                Learn More
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15.0378 6.34317L13.6269 7.76069L16.8972 11.0157L3.29211 11.0293L3.29413 13.0293L16.8619 13.0157L13.6467 16.2459L15.0643 17.6568L20.7079 11.9868L15.0378 6.34317Z"
+                        fill="currentColor" />
+                </svg>
+            </a>
         </div>
+        <img src="/public/images/earth.png" class="object-scale-down h-full" />
+        <div id="particles-js" class="absolute w-screen h-[95vh] pointer-events-none"></div>
     </div>
     <div class="safe-area px-4 py-16 space-y-16">
         <div class="grid md:grid-cols-2 gap-4 place-items-center">

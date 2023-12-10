@@ -5,6 +5,16 @@
     <!-- template defined title -->
     {{block "title" .}}<title>Portland AI Consulting</title>{{end}}
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L13K300MPS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L13K300MPS');
+    </script>
+
     <!-- Template overriden header values, defaults inside block -->
     {{block "head" .}}
     <meta name="description"
