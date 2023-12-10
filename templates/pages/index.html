@@ -72,7 +72,7 @@
                             class="text-earth-text font-bold">Your<br>
                             Business</span>
                     </h1>
-                    <a class="btn btn-lg btn-primary">
+                    <a href="#contact" class="btn btn-lg btn-primary">
                         Learn More
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -90,8 +90,8 @@
     <div class="safe-area px-4 py-16 space-y-16">
         <div class="grid md:grid-cols-2 gap-4 place-items-center">
             <div class="space-y-8">
-                <h3 class="text-5xl font-semibold">AI Tools Are...<br> <span
-                        class="text-primary text-7xl underline">Complicated</span>
+                <h3 class="text-3xl md:text-5xl font-semibold">AI Tools Are...<br> <span
+                        class="text-primary text-5xl md:text-7xl underline">Complicated</span>
                 </h3>
                 <p class="text-lg">
                     Tools like <a class="link link-primary" href="https://chat.openai.com" target="_blank"
@@ -109,10 +109,11 @@
         </div>
         <div class="space-y-8">
             <div class="grid place-items-center text-center">
-                <h2 class="text-6xl max-w-3xl font-semibold">Our Team is Your<br> <span class="text-primary">AI
+                <h2 class="text-5xl md:text-6xl max-w-3xl font-semibold">Our Team is Your<br> <span
+                        class="text-primary">AI
                         Expert</span></h2>
             </div>
-            <div class="grid grid-cols-3 gap-4">
+            <div class="grid lg:grid-cols-3 gap-4">
                 {{range .Offerings}}
                 {{template "card1.html" .}}
                 {{end}}
@@ -122,18 +123,19 @@
     <div class="bg-black">
         <div class="safe-area px-4 py-16 space-y-16">
             <div class="space-y-4">
-                <h2 class="text-7xl text-white font-bold">Why Us?</h2>
+                <h2 class="text-5xl md:text-7xl text-white font-bold">Why Us?</h2>
                 <p class="text-lg max-w-2xl">
                     The developers at Portland AI have been involved in the AI industry before mainstream
                     adoption. We use our fundamental understanding of tools like ChatGPT
                     and DALL•E to integrate seamlessly with your existing business practices.
                 </p>
             </div>
-            <div class="grid grid-cols-2 gap-4 place-items-center">
+            <div class="grid md:grid-cols-2 gap-4 place-items-center">
                 <div class="space-y-4">
-                    <div class="">
+                    <div class="text-center md:text-left">
                         <p class="text-2xl text-gray-500">Our Philosophy</p>
-                        <h2 class="text-5xl font-semibold"><span class="text-primary underline">Collaborators</span>,
+                        <h2 class="text-4xl md:text-5xl font-semibold"><span
+                                class="text-primary underline">Collaborators.</span>
                             Not Clients</h2>
                     </div>
                     <p class="text-lg">
@@ -156,11 +158,12 @@
                     <img src="/public/svg/consult.svg" />
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-4 place-items-center">
+            <div class="grid md:grid-cols-2 gap-4 place-items-center">
                 <div class="space-y-4">
-                    <div class="">
+                    <div class="text-center md:text-left">
                         <p class="text-2xl text-gray-500">Useful AI</p>
-                        <h2 class="text-5xl font-semibold">Only When<br> <span class="text-primary underline">AI Makes
+                        <h2 class="text-4xl md:text-5xl font-semibold">Only When<br> <span
+                                class="text-primary underline">AI Makes
                                 Sense</span></h2>
                     </div>
                     <p class="text-lg">
@@ -176,12 +179,12 @@
             </div>
             <div class="grid place-items-center">
                 <div class="max-w-4xl bg-base-300 rounded-xl p-4 space-y-4">
-                    <div class="flex space-x-2 text-amber-500">
+                    <div class="flex space-x-1 text-amber-500">
                         <template x-for="i in Array.from({ length: 5 }, (_, i) => i)">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M12 6.34315L6.34317 12L12 17.6569L17.6569 12L12 6.34315ZM2.10052 12L12 21.8995L21.8995 12L12 2.10051L2.10052 12Z"
+                                <path
+                                    d="M11 6H13V10.079L16.3413 7.73938L17.4885 9.37768L13.7434 12L17.4885 14.6223L16.3413 16.2606L13 13.921V18H11V13.921L7.65864 16.2606L6.51148 14.6223L10.2565 12L6.51147 9.37769L7.65863 7.73938L11 10.079V6Z"
                                     fill="currentColor" />
                             </svg>
                         </template>
@@ -199,10 +202,10 @@
                     <p class="font-bold">Michelle Labrosse - Cheetah Learning</p>
                 </div>
             </div>
-            <div class="space-y-8 pt-32">
+            <div class="space-y-8 pt-16 md:pt-32">
                 <div class="text-center grid place-items-center">
                     <p class="text-2xl text-gray-500">Showcase</p>
-                    <h2 class="text-5xl font-semibold">Our Portfolio</h2>
+                    <h2 class="text-4xl md:text-5xl font-semibold">Our Portfolio</h2>
                 </div>
                 <div class="grid lg:grid-cols-2 gap-8">
                     {{range .Portfolio}}
@@ -210,16 +213,16 @@
                     {{end}}
                 </div>
             </div>
-            <div class="space-y-8 pt-32">
+            <div class="space-y-8 pt-16 md:pt-32">
                 <div class="text-center grid place-items-center">
                     <p class="text-2xl text-gray-500">Expertise</p>
-                    <h2 class="text-5xl font-semibold">The Technologies We Know</h2>
+                    <h2 class="text-4xl md:text-5xl font-semibold">The Technologies We Know</h2>
                 </div>
                 {{template "aiTools.html" .Technologies}}
             </div>
         </div>
 
-        <div class="mt-32">
+        <div class="mt-32 mx-4">
             <div id="contact" hx-ext="response-targets" class="mx-auto max-w-2xl space-y-2">
                 <h2 class="grid place-items-center text-2xl font-medium">Let's Chat</h2>
                 <div class="bg-base-100 rounded-xl p-2">
