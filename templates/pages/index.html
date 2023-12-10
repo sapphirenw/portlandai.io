@@ -1,0 +1,218 @@
+{{extends "base.html"}}
+
+{{define "endscript"}}
+
+<script src="/public/js/particles@2.0.0.js"></script>
+
+<script>
+    particlesJS.load('particles-js', '/public/config/particlesjs-config.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+
+{{end}}
+
+{{define "content"}}
+
+<div class="space-y-16">
+    <div class="bg-earth h-[100vh] max-h-[1500px]">
+        <div id="particles-js" class="z-0 absolute top-0 h-[100vh] max-h-[1500px] w-screen"></div>
+        <div class="z-50 absolute top-0 h-[100vh] max-h-[1500px] w-screen">
+            <div class="flex flex-col justify-between h-full">
+                <div class="grid place-items-center gap-4 pt-[100px]">
+                    <h1 class="text-center tracking-wide text-4xl md:text-7xl">
+                        Bridging the Gap<br> Between <span class="text-earth-text font-bold">AI</span> and <span
+                            class="text-earth-text font-bold">Your<br>
+                            Business</span>
+                    </h1>
+                    <a class="btn btn-lg btn-primary">
+                        Learn More
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15.0378 6.34317L13.6269 7.76069L16.8972 11.0157L3.29211 11.0293L3.29413 13.0293L16.8619 13.0157L13.6467 16.2459L15.0643 17.6568L20.7079 11.9868L15.0378 6.34317Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="w-full grid place-items-center">
+                    <img src="/public/svg/earth.svg" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="safe-area px-4 py-16 space-y-16">
+        <div class="grid md:grid-cols-2 gap-4 place-items-center">
+            <div class="space-y-8">
+                <h3 class="text-5xl font-semibold">AI Tools Are...<br> <span
+                        class="text-primary text-7xl underline">Complicated</span>
+                </h3>
+                <p class="text-lg">
+                    Tools like <a class="link link-primary" href="https://chat.openai.com" target="_blank"
+                        rel="noopener noreferrer">ChatGPT</a> and <a class="link link-primary"
+                        href="https://zapier.com/apps/ai/integrations" target="_blank"
+                        rel="noopener noreferrer">Zapier</a> are undoubtably powerful, but
+                    how these tools can
+                    integrate into your existing business workflows is complicated... Plus, most engineering teams are
+                    not trained to quickly integrate and develop these products.
+                </p>
+            </div>
+            <div class="">
+                <img src="/public/svg/work-stress.svg" />
+            </div>
+        </div>
+        <div class="space-y-8">
+            <div class="grid place-items-center text-center">
+                <h2 class="text-6xl max-w-3xl font-semibold">Our Team is Your<br> <span class="text-primary">AI
+                        Expert</span></h2>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+                <a href="/ai-tools">
+                    <div
+                        class="group border-4 border-transparent hover:border-primary overflow-hidden rounded-2xl transition-all">
+                        <div class="card bg-base-300 rounded-none">
+                            <div class="card-body">
+                                <h2 class="card-title group-hover:text-primary group-hover:underline transition-all">
+                                    AI Tools
+                                </h2>
+                                <p>
+                                    Find a neat AI Tool? Portland AI will vet your choice and work with you to
+                                    implement your
+                                    vision.
+                                </p>
+                            </div>
+                            <figure>
+                                <img class="group-hover:scale-150 group-hover:opacity-70 transition-all duration-500"
+                                    src="/public/images/ai-tools.jpg" alt="AI Tools" />
+                            </figure>
+                        </div>
+                    </div>
+                </a>
+                <a href="/ai-tools">
+                    <div
+                        class="group border-4 border-transparent hover:border-primary overflow-hidden rounded-2xl transition-all">
+                        <div class="card bg-base-300 rounded-none">
+                            <div class="card-body">
+                                <h2 class="card-title group-hover:text-primary group-hover:underline transition-all">
+                                    Custom Integrations
+                                </h2>
+                                <p>
+                                    We are experts in utilizing the powerful APIs from OpenAI, Athropic, and more to
+                                    build truly
+                                    custom solutions.
+                                </p>
+                            </div>
+                            <figure>
+                                <img class="group-hover:scale-150 group-hover:opacity-70 transition-all duration-500"
+                                    src="/public/images/custom-software.jpg" alt="Custom Software" />
+                            </figure>
+                        </div>
+                    </div>
+                </a>
+                <a href="/ai-tools">
+                    <div
+                        class="group border-4 border-transparent hover:border-primary overflow-hidden rounded-2xl transition-all">
+                        <div class="card bg-base-300 rounded-none">
+                            <div class="card-body">
+                                <h2 class="card-title group-hover:text-primary group-hover:underline transition-all">
+                                    Consultations
+                                </h2>
+                                <p>
+                                    We are not interested on selling you on a modern hype train. Meet with us to decide
+                                    if AI is
+                                    right for you.
+                                </p>
+                            </div>
+                            <figure>
+                                <img class="group-hover:scale-150 group-hover:opacity-70 transition-all duration-500"
+                                    src="/public/images/software-consultant.jpeg" alt="AI Tools" />
+                            </figure>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="bg-black">
+        <div class="safe-area px-4 py-16 space-y-16">
+            <div class="space-y-4">
+                <h2 class="text-7xl text-white font-bold">Why Us?</h2>
+                <p class="text-lg max-w-2xl">
+                    The developers at Portland AI have been involved in the AI industry before mainstream
+                    adoption. We have a fundamental understanding of the base technolgy that composes tools like ChatGPT
+                    and DALL•E.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4 place-items-center">
+                <div class="space-y-4">
+                    <div class="">
+                        <p class="text-2xl text-gray-500">Our Philosophy</p>
+                        <h2 class="text-5xl font-semibold"><span class="text-primary underline">Collaborators</span>,
+                            Not Clients</h2>
+                    </div>
+                    <p class="text-lg">
+                        We are not interested in clients, but rather see our services more as a collaboration between
+                        individuals sharing knowledge and expertise. We will not recommend AI to businesses who do not
+                        need
+                        it. We will not attempt to persuade a business into using AI when they are not convinced
+                        themselves
+                        it is an answer, that is not who we are targeting or who we are. Our target is successful
+                        businesses
+                        with owners who recognize and believe in the utility of AI in a practical business sense, but do
+                        not
+                        know or do not have the engineering budget to build out full scale tools that help alleviate
+                        these
+                        business struggles. We step in, help our collaborator identify places where AI can (and arguably
+                        more importantly where it can NOT) help to solve a problem.
+                    </p>
+                </div>
+                <div class="">
+                    <img src="/public/svg/consult.svg" />
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 place-items-center">
+                <div class="space-y-4">
+                    <div class="">
+                        <p class="text-2xl text-gray-500">Useful AI</p>
+                        <h2 class="text-5xl font-semibold">Only When<br> <span class="text-primary underline">AI Makes
+                                Sense</span></h2>
+                    </div>
+                    <p class="text-lg">
+                        We do not market AI tools and solutions as a silver bullet that can solve any of your problems.
+                        We are realistic in our observation of the space, and openly critique tools / technologies /
+                        companies in all aspects where they fall short. But we are also quick to highlight the specific
+                        circumstances where AI can help and be a superpower. Ultimately, we believe in balance.
+                    </p>
+                </div>
+                <div class="">
+                    <img src="/public/svg/puzzle.svg" />
+                </div>
+            </div>
+            <div class="space-y-8">
+                <div class="">
+                    <p class="text-2xl text-gray-500">Showcase</p>
+                    <h2 class="text-5xl font-semibold">Our Portfolio</h2>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="card card-compact bg-base-100 shadow-xl">
+                        <figure>
+                            <img src="/public/images/custom-software.jpg" alt="Shoes" />
+                        </figure>
+                        <div class="card-body">
+                            <h2 class="card-title">Automatic Blogs</h2>
+                            <p class="text-lg">
+                                We developed a novel system to develop well-researched articles covering a wide array of
+                                topics. This product seamlessly combines AI with traditional programming paradigms.
+                            </p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-primary">Check It Out</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="h-[100px]"></div>
+    </div>
+</div>
+
+{{end}}

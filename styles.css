@@ -1,0 +1,15 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+    html {
+        @apply scroll-smooth scroll-pt-[90px];
+    }
+}
+
+@layer components {
+    .safe-area {
+        @apply max-w-[1200px] mx-auto 2xl:max-w-[1500px]
+    }
+}
