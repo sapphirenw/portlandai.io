@@ -12,6 +12,7 @@ RUN npm install && npm install uglify-js -g
 
 # Copy Tailwind and JavaScript source files
 COPY styles.css .
+RUN npx tailwindcss -i styles.css -o public/css/app.css
 COPY tailwind.config.js .
 COPY public/js/ ./public/js/
 
