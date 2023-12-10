@@ -1,5 +1,52 @@
 {{extends "base.html"}}
 
+{{define "head"}}
+<style>
+    .spinner {
+        transition: width 0.15s ease;
+        display: inline-block;
+        overflow: hidden;
+        width: 0;
+    }
+
+    .htmx-request.spinner {
+        width: 30px;
+    }
+</style>
+{{end}}
+
+{{define "script"}}
+<script src="/public/js/response-targets.js"></script>
+<script>
+    function clearForm(event, formElement) {
+        // clear form if success
+        if (event.detail.xhr.status === 200) {
+            formElement.reset();
+        } else {
+
+        }
+
+        // clear the success text after 5 sec
+        setTimeout(function () {
+            const element = document.getElementById("server-status");
+            if (element) {
+                element.textContent = '';
+            }
+        }, 5000);
+    }
+
+    function fetchUrlParams() {
+        const urlParameters = new URLSearchParams(window.location.search);
+        console.log(urlParameters)
+        return {
+            userId: urlParameters.get('userId') || '',
+            email: urlParameters.get('email') || '',
+            type: urlParameters.get('type') || 'Feedback',
+        };
+    }
+</script>
+{{end}}
+
 {{define "endscript"}}
 
 <script src="/public/js/particles@2.0.0.js"></script>
@@ -66,69 +113,9 @@
                         Expert</span></h2>
             </div>
             <div class="grid grid-cols-3 gap-4">
-                <a href="/ai-tools">
-                    <div
-                        class="group border-4 border-transparent hover:border-primary overflow-hidden rounded-2xl transition-all">
-                        <div class="card bg-base-300 rounded-none">
-                            <div class="card-body">
-                                <h2 class="card-title group-hover:text-primary group-hover:underline transition-all">
-                                    AI Tools
-                                </h2>
-                                <p>
-                                    Find a neat AI Tool? Portland AI will vet your choice and work with you to
-                                    implement your
-                                    vision.
-                                </p>
-                            </div>
-                            <figure>
-                                <img class="group-hover:scale-150 group-hover:opacity-70 transition-all duration-500"
-                                    src="/public/images/ai-tools.jpg" alt="AI Tools" />
-                            </figure>
-                        </div>
-                    </div>
-                </a>
-                <a href="/ai-tools">
-                    <div
-                        class="group border-4 border-transparent hover:border-primary overflow-hidden rounded-2xl transition-all">
-                        <div class="card bg-base-300 rounded-none">
-                            <div class="card-body">
-                                <h2 class="card-title group-hover:text-primary group-hover:underline transition-all">
-                                    Custom Integrations
-                                </h2>
-                                <p>
-                                    We are experts in utilizing the powerful APIs from OpenAI, Athropic, and more to
-                                    build truly
-                                    custom solutions.
-                                </p>
-                            </div>
-                            <figure>
-                                <img class="group-hover:scale-150 group-hover:opacity-70 transition-all duration-500"
-                                    src="/public/images/custom-software.jpg" alt="Custom Software" />
-                            </figure>
-                        </div>
-                    </div>
-                </a>
-                <a href="/ai-tools">
-                    <div
-                        class="group border-4 border-transparent hover:border-primary overflow-hidden rounded-2xl transition-all">
-                        <div class="card bg-base-300 rounded-none">
-                            <div class="card-body">
-                                <h2 class="card-title group-hover:text-primary group-hover:underline transition-all">
-                                    Consultations
-                                </h2>
-                                <p>
-                                    We are not interested on selling you on a modern hype train. Meet with us to decide
-                                    if AI is
-                                    right for you.
-                                </p>
-                            </div>
-                            <figure>
-                                <img class="group-hover:scale-150 group-hover:opacity-70 transition-all duration-500"
-                                    src="/public/images/software-consultant.jpeg" alt="AI Tools" />
-                            </figure>
-                        </div>
-                    </div>
-                </a>
+                {{range .Offerings}}
+                {{template "card1.html" .}}
+                {{end}}
             </div>
         </div>
     </div>
@@ -138,8 +125,8 @@
                 <h2 class="text-7xl text-white font-bold">Why Us?</h2>
                 <p class="text-lg max-w-2xl">
                     The developers at Portland AI have been involved in the AI industry before mainstream
-                    adoption. We have a fundamental understanding of the base technolgy that composes tools like ChatGPT
-                    and DALL•E.
+                    adoption. We use our fundamental understanding of tools like ChatGPT
+                    and DALL•E to integrate seamlessly with your existing business practices.
                 </p>
             </div>
             <div class="grid grid-cols-2 gap-4 place-items-center">
@@ -187,30 +174,114 @@
                     <img src="/public/svg/puzzle.svg" />
                 </div>
             </div>
-            <div class="space-y-8">
-                <div class="">
+            <div class="grid place-items-center">
+                <div class="max-w-4xl bg-base-300 rounded-xl p-4 space-y-4">
+                    <div class="flex space-x-2 text-amber-500">
+                        <template x-for="i in Array.from({ length: 5 }, (_, i) => i)">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12 6.34315L6.34317 12L12 17.6569L17.6569 12L12 6.34315ZM2.10052 12L12 21.8995L21.8995 12L12 2.10051L2.10052 12Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </template>
+                    </div>
+                    <p>
+                        Kevin has been the primary programmer for our business for the past 15 years. We've gone through
+                        numerous technology changes in that time and Kevin has kept up with it all making sure our
+                        business
+                        is best leveraging the available technology to keep our highly automated business running
+                        smoothly.
+                        Besides being an astute business man who often leads the changes we need to make to stay viable,
+                        he
+                        is also very responsive to make the changes we request as well.
+                    </p>
+                    <p class="font-bold">Michelle Labrosse - Cheetah Learning</p>
+                </div>
+            </div>
+            <div class="space-y-8 pt-32">
+                <div class="text-center grid place-items-center">
                     <p class="text-2xl text-gray-500">Showcase</p>
                     <h2 class="text-5xl font-semibold">Our Portfolio</h2>
                 </div>
-                <div class="grid grid-cols-2 gap-8">
-                    <div class="card card-compact bg-base-100 shadow-xl">
-                        <figure>
-                            <img src="/public/images/custom-software.jpg" alt="Shoes" />
-                        </figure>
-                        <div class="card-body">
-                            <h2 class="card-title">Automatic Blogs</h2>
-                            <p class="text-lg">
-                                We developed a novel system to develop well-researched articles covering a wide array of
-                                topics. This product seamlessly combines AI with traditional programming paradigms.
-                            </p>
-                            <div class="card-actions justify-end">
-                                <button class="btn btn-primary">Check It Out</button>
+                <div class="grid lg:grid-cols-2 gap-8">
+                    {{range .Portfolio}}
+                    {{template "card1.html" .}}
+                    {{end}}
+                </div>
+            </div>
+            <div class="space-y-8 pt-32">
+                <div class="text-center grid place-items-center">
+                    <p class="text-2xl text-gray-500">Expertise</p>
+                    <h2 class="text-5xl font-semibold">The Technologies We Know</h2>
+                </div>
+                {{template "aiTools.html" .Technologies}}
+            </div>
+        </div>
+
+        <div class="mt-32">
+            <div id="contact" hx-ext="response-targets" class="mx-auto max-w-2xl space-y-2">
+                <h2 class="grid place-items-center text-2xl font-medium">Let's Chat</h2>
+                <div class="bg-base-100 rounded-xl p-2">
+                    <form hx-post="/events/send-support-form" hx-on="htmx:afterRequest: clearForm(event, this)"
+                        hx-target="#server-status" hx-target-400="#server-status" hx-target-500="#server-status"
+                        hx-swap="innerHTML" hx-indicator="#spinner" class="space-y-2">
+                        <div class="form-control w-full">
+                            <label class="label">
+                                <span class="label-text">Email*</span>
+                            </label>
+                            <input type="email" placeholder="support@portlandai.io" name="email"
+                                class="input input-bordered input-primary w-full" />
+                            <label class="label">
+                                <span class="label-text-alt">This is used to ensure a response to you.</span>
+                            </label>
+                        </div>
+                        <div class="form-control w-full">
+                            <label class="label">
+                                <span class="label-text">Name</span>
+                            </label>
+                            <input type="text" placeholder="Jake" name="name" class="input input-bordered w-full" />
+                            <label class="label">
+                                <span class="label-text-alt"></span>
+                            </label>
+                        </div>
+                        <div class="form-control w-full">
+                            <label class="label">
+                                <span class="label-text">Message*</span>
+                            </label>
+                            <input type="text" placeholder="Tell us what you want to talk about?" name="message"
+                                class="input input-bordered input-primary w-full" />
+                            <label class="label">
+                                <span class="label-text-alt"></span>
+                            </label>
+                        </div>
+                        <div class="flex space-x-2">
+                            <div class="w-[100%]">
+                                <a href="https://calendly.com/jake-sapphirenw/30min" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn-primary btn-outline w-[100%] py-2">
+                                    <div class="flex items-center">
+                                        <span class="submit">Schedule a Video Meeting</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="w-[100%]">
+                                <button class="btn btn-primary w-[100%] py-2">
+                                    <div class="flex items-center">
+                                        <span class="submit">Submit Form</span>
+                                        <img id="spinner" class="spinner object-scale-down h-[20px]"
+                                            src="/public/svg/spinner.svg">
+                                    </div>
+                                </button>
                             </div>
                         </div>
-                    </div>
+                    </form>
+                </div>
+                <div class="grid place-items-center h-[50px]">
+                    <div id="server-status"></div>
                 </div>
             </div>
         </div>
+
         <div class="h-[100px]"></div>
     </div>
 </div>

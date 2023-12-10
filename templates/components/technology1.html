@@ -1,0 +1,9 @@
+<a href="{{.Route}}" target="_blank" rel="noopener noreferrer">
+    <div class="md:hover:bg-base-300 transition-colors rounded-lg">
+        <div class="p-4 space-y-2 grid place-items-center">
+            <h3 class="text-2xl font-bold text-white text-center">{{.Title}}</h3>
+            <img {{if .Img}} src="{{.Img}}" {{else}} src="{{.Route}}/favicon.ico" {{end}} alt="{{.Title}}"
+                class="h-[100px] w-auto rounded-md" />
+        </div>
+    </div>
+</a>

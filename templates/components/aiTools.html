@@ -1,0 +1,10 @@
+<div class="relative">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {{range .}}
+        {{template "technology1.html" .}}
+        {{end}}
+    </div>
+    <div class="absolute bottom-0 grid place-items-center w-full bg-gradient-to-t from-black">
+        <p class="text-center text-2xl font-bold pb-[50px] pt-[120px]">Plus Many More...</p>
+    </div>
+</div>

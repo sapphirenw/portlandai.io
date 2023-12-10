@@ -8,6 +8,7 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/sapphirenw/gotmpl"
+	"github.com/sapphirenw/portlandai.io/src/events"
 	"github.com/sapphirenw/portlandai.io/src/routes"
 )
 
@@ -53,10 +54,19 @@ func main() {
 	})
 
 	// routes
-	// r.NotFound(routes.NotFound)
+	r.NotFound(routes.NotFound)
 	// r.Get("/error", routes.Error)
 	r.Get("/", routes.Index)
-	// r.Get("/search", routes.Search)
+
+	// events
+	r.Route("/events", func(r chi.Router) {
+		r.Post("/send-support-form", func(w http.ResponseWriter, r *http.Request) {
+			msg, status := events.EventForm(w, r)
+			w.WriteHeader(status)
+			w.Header().Add("Content-Type", "text/html")
+			w.Write([]byte(fmt.Sprintf("<p>%s</p>", msg)))
+		})
+	})
 
 	fmt.Println("Listening on :3000")
 	fmt.Println(http.ListenAndServe(":3000", r))

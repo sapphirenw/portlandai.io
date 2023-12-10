@@ -62,23 +62,10 @@
         });
     </script>
 
-    <script>
-        window.addEventListener('scroll', function () {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.classList.add('bg-base-200');
-                navbar.classList.add('shadow-lg');
-            } else {
-                navbar.classList.remove('bg-base-200');
-                navbar.classList.remove('shadow-lg');
-            }
-        });
-    </script>
-
     <!-- Page defined sripts -->
     {{block "script" .}}{{end}}
 
-    <div id="navbar" class="w-screen fixed top-0 z-40 transition-all">
+    <header id="navbar" class="w-screen fixed top-0 z-40 transition-all">
         <div class="navbar safe-area">
             <div class="md:navbar-start">
                 <div class="dropdown">
@@ -91,41 +78,23 @@
                     </div>
                     <ul tabindex="0"
                         class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52">
-                        <li><a>Item 1</a></li>
-                        <li>
-                            <a>Parent</a>
-                            <ul class="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a>Item 3</a></li>
+                        {{template "menu.html"}}
                     </ul>
                 </div>
                 <div class="">
                     <a href="/" class="flex items-center px-2 mx-2 btn btn-ghost">
                         <img src="/public/images/portlandai.png" class="h-[40px] w-[40px] object-scale-down" />
-                        <h1 class="text-3xl pl-2 font-extralight">Portland AI</h1>
+                        <h1 class="text-3xl pl-2 font-semibold">Portland AI</h1>
                     </a>
                 </div>
             </div>
             <div class="navbar-end hidden md:flex">
                 <ul class="menu menu-horizontal px-1">
-                    <li>
-                        <details>
-                            <summary>Portfolio</summary>
-                            <ul class="p-2 bg-base-300">
-                                <li><a>Automatic Content Generation</a></li>
-                                <li><a>Fitness AI</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li><a>About Us</a></li>
-                    <li><a>Contact</a></li>
+                    {{template "menu.html"}}
                 </ul>
             </div>
         </div>
-    </div>
+    </header>
 
     <!-- Content -->
     <div class="z-0">
@@ -133,7 +102,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer items-center p-4 text-neutral bg-neutral-content">
+    <footer class="footer items-center p-4">
         <div class="safe-area w-[100%] flex items-center justify-between">
             <aside class="items-center flex space-x-2">
                 <img src="/public/images/portlandai.png" alt="WN Dumbbell"
@@ -151,6 +120,20 @@
             </nav>
         </div>
     </footer>
+
+    <!-- change title bar color when scrolling -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-base-200');
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('bg-base-200');
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
 
     <!-- scripts that should run after page render -->
     {{block "endscript" .}}{{end}}

@@ -1,0 +1,29 @@
+<a href="{{.Route}}" {{if .External}} target="_blank" rel="noopener noreferrer" {{end}}>
+    <div
+        class="group border-4 border-transparent md:hover:border-primary overflow-hidden rounded-2xl transition-all h-full">
+        <div class="card bg-base-300 rounded-none flex flex-col justify-between h-full">
+            <div class="card-body">
+                <div class="flex items-center w-fit">
+                    <h2 class="card-title md:group-hover:text-primary md:group-hover:underline transition-all">
+                        {{.Title}}
+                    </h2>
+                    {{if .Annotation}}
+                    <p
+                        class="ml-2 badge badge-secondary badge-outline md:group-hover:opacity-50 transition-opacity duration-500">
+                        {{.Annotation}}
+                    </p>
+                    {{end}}
+                </div>
+                <p>
+                    {{.Description}}
+                </p>
+            </div>
+            <div class="">
+                <figure>
+                    <img class="md:group-hover:scale-150 md:group-hover:opacity-70 transition-all duration-500 h-[250px] min-w-full min-h-full object-cover"
+                        src="{{.Src}}" alt="{{.Alt}}" />
+                </figure>
+            </div>
+        </div>
+    </div>
+</a>
