@@ -1,2 +1,4 @@
 github.com/go-chi/chi/v5 v5.0.10 h1:rLz5avzKpjqxrYwXNfmjkrYYXOyLJd37pz53UFHC6vk=
 github.com/go-chi/chi/v5 v5.0.10/go.mod h1:DslCQbL2OYiznFReuXYUmQ2hGd1aDpCnlMNITLSKoi8=
+github.com/sapphirenw/gotmpl v1.0.3 h1:AOQNO5ZZq9vrELt845PUrkqxCZkl6WSMhxUcjQMVzBk=
+github.com/sapphirenw/gotmpl v1.0.3/go.mod h1:cd57TAxPIqL1K+hZwP+c2CJmMqh/KdbEOtPhOhalFks=
