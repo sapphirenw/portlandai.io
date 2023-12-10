@@ -10,9 +10,10 @@ COPY package*.json ./
 # Install Node dependencies including UglifyJS
 RUN npm install && npm install uglify-js -g
 
-# Copy all source files
-COPY . .
-RUN npx tailwindcss -i styles.css -o public/css/app.css
+# Copy Tailwind and JavaScript source files
+COPY styles.css .
+COPY tailwind.config.js .
+COPY public/js/ ./public/js/
 
 # Generate minified CSS file using Tailwind
 RUN npx tailwindcss -o ./public/css/app.css
