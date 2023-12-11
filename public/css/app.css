@@ -2288,6 +2288,11 @@ html {
   height: 100%;
 }
 
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .min-h-full {
   min-height: 100%;
 }
@@ -2421,6 +2426,10 @@ html {
   overflow: hidden;
 }
 
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
 .rounded-2xl {
   border-radius: 1rem;
 }
@@ -2476,6 +2485,11 @@ html {
 .bg-earth {
   --tw-bg-opacity: 1;
   background-color: rgb(4 12 51 / var(--tw-bg-opacity));
+}
+
+.bg-red-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-t {

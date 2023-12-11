@@ -24,7 +24,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		},
 		{
 			Title:       "Custom Integrations",
-			Description: "We are experts in utilizing the powerful APIs from OpenAI, Athropic, and more to build truly custom solutions.",
+			Description: "We are experts in utilizing the powerful APIs from OpenAI, Athropic, Llama, and more to build truly custom solutions.",
 			Src:         "/public/images/custom-software.jpg",
 			Alt:         "Custom Software",
 			Route:       "/custom-software",
